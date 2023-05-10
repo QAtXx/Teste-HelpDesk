@@ -7,9 +7,6 @@ describe('Teste completo no LegHub',()=>{
     cy.fixture('cliente.json').then((cliente)=>{
       cy.get('[id=":r7:"')// clica no campo do codigo e insere
         .type(cliente.codCliente)
-    /*cy.get('[id=":r13:"') // clica no campo cpf/cnpj e insere 
-        .click()
-        .type(cliente.CNPJ) */
     })
     cy.fixture('chamado.json').then((chamado)=>{    
       cy.get('[id=":re:"')// clica no campo contato e insere nome
@@ -18,9 +15,9 @@ describe('Teste completo no LegHub',()=>{
       cy.get('[id=":rf:"')// clica no campo telefone e insere numero
         .clear()
         .type(chamado.telefoneContato)
-      cy.get('[id=":rg:"')// clica no campo descriÁ„o e insere
+      cy.get('[id=":rg:"')// clica no campo descri√ß√£o e insere
         .type(chamado.descricao)
-      cy.contains('Salvar')// clica no bot„o salvar 
+      cy.contains('Salvar')// clica no bot√£o salvar 
         .click()
     })
     cy.get('.MuiAlert-message')// verifica a mensagem de retorno
@@ -42,14 +39,14 @@ describe('Teste completo no LegHub',()=>{
       cy.get('[id=":rf:"')// clica no campo telefone e insere numero
         .clear()
         .type(chamado.telefoneContato)
-      cy.get('[id=":rg:"')// clica no campo descriÁ„o e insere
+      cy.get('[id=":rg:"')// clica no campo descri√ß√£o e insere
         .type(chamado.descricao)
-      cy.get('.MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input')//seleciona a opÁ„o de agendar
+      cy.get('.MuiSwitch-root > .MuiButtonBase-root > .PrivateSwitchBase-input')//seleciona a op√ß√£o de agendar
         .click()
       cy.get('[id=":rc:"')// clica no campo e insere a data e hora 
         .click()
         .type(`{selectAll}${chamado.dtAgendamento}`) 
-      cy.contains('Salvar')// clica no bot„o salvar 
+      cy.contains('Salvar')// clica no bot√£o salvar 
         .click()
    })
    cy.get('.MuiAlert-message')// verifica a mensagem de retorno
@@ -59,10 +56,7 @@ describe('Teste completo no LegHub',()=>{
   it('Criar novo chamado Urgente',()=>{
     cy.fixture('cliente.json').then((cliente)=>{
       cy.get('[id=":r7:"')// clica no campo do codigo e insere
-        .type(cliente.codCliente)
-    /*cy.get('[id=":r13:"') // clica no campo cpf/cnpj e insere 
-        .click()
-        .type(cliente.CNPJ) */
+        .type(cliente.codCliente
     })
     cy.fixture('chamado.json').then((chamado)=>{    
       cy.get('[id=":re:"')// clica no campo contato e insere nome
@@ -71,11 +65,11 @@ describe('Teste completo no LegHub',()=>{
       cy.get('[id=":rf:"')// clica no campo telefone e insere numero
         .clear()
         .type(chamado.telefoneContato)
-      cy.get('[id=":rg:"')// clica no campo descriÁ„o e insere
+      cy.get('[id=":rg:"')// clica no campo descri√ß√£o e insere
         .type(chamado.descricao)
-      cy.get('.MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input') // clica na opÁ„o de urgente
+      cy.get('.MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input') // clica na op√ß√£o de urgente
         .click() 
-      cy.contains('Salvar')// clica no bot„o salvar 
+      cy.contains('Salvar')// clica no bot√£o salvar 
         .click()
     })
     cy.get('.MuiAlert-message')// verifica a mensagem de retorno
@@ -86,9 +80,9 @@ describe('Teste completo no LegHub',()=>{
     it('iniciar um atendimento', () =>{      
       cy.get('div').contains('Abertos')//clicar na aba Abertos 
         .click()     
-      cy.get('button').contains('Iniciar')//clica no bot„o Iniciar atendimento  
+      cy.get('button').contains('Iniciar')//clica no bot√£o Iniciar atendimento  
         .click()    
-      cy.get('button').contains('OK')// clica no bot„o Ok 
+      cy.get('button').contains('OK')// clica no bot√£o Ok 
         .click()  
     })
   }
@@ -97,10 +91,10 @@ describe('Teste completo no LegHub',()=>{
     cy.fixture('chamado.json').then((chamado)=>{             
       cy.get('div').contains('Abertos')//clica na aba Abertos
         .click()              
-        cy.get('.css-1uznl32 > .css-8br529 > .css-b95f0i > .MuiGrid-container > :nth-child(1) > .MuiBadge-root > .MuiPaper-root > .MuiCardActionArea-root > .css-mywm6h > .css-l5c1s3 > .css-1ialerq > .MuiStack-root > [aria-label="Cancelar chamado"] > [data-testid="DeleteOutlinedIcon"]')//clica na opÁ„o de cancelar chamado
+        cy.get('.css-1uznl32 > .css-8br529 > .css-b95f0i > .MuiGrid-container > :nth-child(1) > .MuiBadge-root > .MuiPaper-root > .MuiCardActionArea-root > .css-mywm6h > .css-l5c1s3 > .css-1ialerq > .MuiStack-root > [aria-label="Cancelar chamado"] > [data-testid="DeleteOutlinedIcon"]')//clica na op√ß√£o de cancelar chamado
       //cy.get(':nth-child(1) > .MuiBadge-root > .MuiPaper-root > .MuiCardActionArea-root > .css-mywm6h > .css-l5c1s3 > .css-1ialerq > .MuiStack-root > [aria-label="Cancelar chamado"]')
         .click()
-      cy.get(':nth-child(2) > .MuiInputBase-root') //clica dentro do campo observaÁ„o e insere a descriÁ„o        
+      cy.get(':nth-child(2) > .MuiInputBase-root') //clica dentro do campo observa√ß√£o e insere a descri√ß√£o        
         .click()
         .type(chamado.obsCancelamento)
     })
@@ -123,12 +117,12 @@ describe('Teste completo no LegHub',()=>{
     cy.fixture('chamado.json').then((chamado) =>{
       cy.get('div').contains('Atendimentos') // clica na aba Atendimentos
         .click()
-      cy.get('Button').contains('Fechar') // clica no bot„o finalizar
+      cy.get('Button').contains('Fechar') // clica no bot√£o finalizar
         .click()
-      cy.get('.MuiInputBase-root') // clica e insere a descriÁ„o de finalizaÁ„o
+      cy.get('.MuiInputBase-root') // clica e insere a descri√ß√£o de finaliza√ß√£o
         .click()
         .type(chamado.obsFinalizacao)
-      cy.get('.css-1t62lt9 > :nth-child(2)') // clica no bot„o Ok
+      cy.get('.css-1t62lt9 > :nth-child(2)') // clica no bot√£o Ok
         .click()
     })
     cy.get('.MuiAlert-message')// verifica a mensagem de retorno
